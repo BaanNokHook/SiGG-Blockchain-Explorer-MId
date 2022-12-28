@@ -1,0 +1,219 @@
+{
+	"name": "first-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminUser": "admin",
+		"adminPassword": "adminpw",
+		"enableAuthentication": false,
+		"organization": "Org-SGPST-MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"sgpst-phlgt-channel": {
+			"orderers": ["orderer0.sgpst.pdng.com","orderer0.phlgt.pdng.com","orderer0.thawn.pdng.com"],
+			"peers": {
+				"peer0.org.sgpst.pdng.com": {},
+				"peer1.org.sgpst.pdng.com": {},
+				"peer0.org.phlgt.pdng.com": {},
+				"peer1.org.phlgt.pdng.com": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		},
+		"thawn-sgpst-channel": {
+			"orderers": ["orderer0.sgpst.pdng.com","orderer0.phlgt.pdng.com","orderer0.thawn.pdng.com"],
+			"peers": {
+				"peer0.org.thawn.pdng.com": {},
+				"peer1.org.thawn.pdng.com": {},
+				"peer0.org.sgpst.pdng.com": {},
+				"peer1.org.sgpst.pdng.com": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"Org-SGPST-MSP": {
+			"mspid": "Org-SGPST-MSP",
+			"peers": ["peer0.org.sgpst.pdng.com", "peer1.org.sgpst.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.sgpst.pdng.com/users/Admin@org.sgpst.pdng.com/msp/keystore/009e60e853bcbb0689d53d4bc0fb7aeddfff3837fe6e3df6ef45a38a2f4fc675_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.sgpst.pdng.com/users/Admin@org.sgpst.pdng.com/msp/signcerts/Admin@org.sgpst.pdng.com-cert.pem"
+			}
+		},
+		"Org-PHLGT-MSP": {
+			"mspid": "Org-PHLGT-MSP",
+			"peers": ["peer0.org.phlgt.pdng.com", "peer1.org.phlgt.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.phlgt.pdng.com/users/Admin@org.phlgt.pdng.com/msp/keystore/f35e900288564e18485d8ecdacdf82e807bd888ffabdd1656ea2a777b5b37c88_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.phlgt.pdng.com/users/Admin@org.phlgt.pdng.com/msp/signcerts/Admin@org.phlgt.pdng.com-cert.pem"
+			}
+		},
+		"Org-THAWN-MSP": {
+			"mspid": "Org-THAWN-MSP",
+			"peers": ["peer0.org.thawn.pdng.com", "peer1.org.thawn.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.thawn.pdng.com/users/Admin@org.thawn.pdng.com/msp/keystore/e722f7f766129fc5360762083f6d4bac435a6d75ddce28091b1a00547ebd7c63_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.thawn.pdng.com/users/Admin@org.thawn.pdng.com/msp/signcerts/Admin@org.thawn.pdng.com-cert.pem"
+			}
+		},
+		"Orderer-SGPST-MSP": {
+			"mspid": "Orderer-SGPST-MSP",
+			"orderers": ["orderer0.sgpst.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/sgpst.pdng.com/users/Admin@sgpst.pdng.com/msp/keystore/b29e528c68708bc0eff172d7fd40030046c94d50c9133c864f1eaac341c86119_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/sgpst.pdng.com/users/Admin@sgpst.pdng.com/msp/signcerts/Admin@sgpst.pdng.com-cert.pem"
+			}
+		},
+		"Orderer-PHLGT-MSP": {
+			"mspid": "Orderer-PHLGT-MSP",
+			"orderers": ["orderer0.phlgt.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/phlgt.pdng.com/users/Admin@phlgt.pdng.com/msp/keystore/389c6e8234e1a4a43b591a945b5b80759340938e38e848e2fcae665b21da472d_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/phlgt.pdng.com/users/Admin@phlgt.pdng.com/msp/signcerts/Admin@phlgt.pdng.com-cert.pem"
+			}
+		},
+		"Orderer-THAWN-MSP": {
+			"mspid": "Orderer-THAWN-MSP",
+			"orderers": ["orderer0.thawn.pdng.com"],
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/thawn.pdng.com/users/Admin@thawn.pdng.com/msp/keystore/ed8af701b931aa86dff3aea061c680effd8074b573d8105ab296614b348000fe_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/thawn.pdng.com/users/Admin@thawn.pdng.com/msp/signcerts/Admin@thawn.pdng.com-cert.pem"
+			}
+		}
+	},
+	"orderers": {
+		"orderer0.sgpst.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/sgpst.pdng.com/orderers/orderer0.sgpst.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.203.98:9050",
+			"eventUrl": "grpcs://172.31.203.98:9050",
+			"grpcOptions": {
+				"ssl-target-name-override": "orderer0.sgpst.pdng.com"
+			}
+		},
+		"orderer0.phlgt.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/phlgt.pdng.com/orderers/orderer0.phlgt.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.201.242:11050",
+			"eventUrl": "grpcs://172.31.201.242:11050",
+			"grpcOptions": {
+				"ssl-target-name-override": "orderer0.phlgt.pdng.com"
+			}
+		},
+		"orderer0.thawn.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/ordererOrganizations/thawn.pdng.com/orderers/orderer0.thawn.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.202.144:7050",
+			"eventUrl": "grpcs://172.31.202.144:7050",
+			"grpcOptions": {
+				"ssl-target-name-override": "orderer0.thawn.pdng.com"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org.sgpst.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.sgpst.pdng.com/peers/peer0.org.sgpst.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.203.98:9051",
+			"eventUrl": "grpcs://172.31.203.98:9053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org.sgpst.pdng.com"
+			}
+		},
+		"peer1.org.sgpst.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.sgpst.pdng.com/peers/peer1.org.sgpst.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.203.98:10051",
+			"eventUrl": "grpcs://172.31.203.98:10053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer1.org.sgpst.pdng.com"
+			}
+		},
+		"peer0.org.phlgt.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.phlgt.pdng.com/peers/peer0.org.phlgt.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.201.242:11051",
+			"eventUrl": "grpcs://172.31.201.242:11053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org.phlgt.pdng.com"
+			}
+		},
+		"peer1.org.phlgt.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.phlgt.pdng.com/peers/peer1.org.phlgt.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.201.242:12051",
+			"eventUrl": "grpcs://172.31.201.242:12053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer1.org.phlgt.pdng.com"
+			}
+		},
+		"peer0.org.thawn.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.thawn.pdng.com/peers/peer0.org.thawn.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.207.146:7051",
+			"eventUrl": "grpcs://172.31.207.146:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org.thawn.pdng.com"
+			}
+		},
+		"peer1.org.thawn.pdng.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer/examples/net1/crypto/peerOrganizations/org.thawn.pdng.com/peers/peer1.org.thawn.pdng.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.207.146:8051",
+			"eventUrl": "grpcs://172.31.207.146:8053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer1.org.thawn.pdng.com"
+			}
+		}
+	}
+}

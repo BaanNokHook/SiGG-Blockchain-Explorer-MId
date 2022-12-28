@@ -1,0 +1,21 @@
+{
+	"persistence": "postgreSQL",
+	"platforms": ["fabric"],
+	"postgreSQL": {
+		"host": "0.0.0.0",
+		"_port": "5432",
+		"port": "6432",
+		"database": "fabricexplorer",
+		"username": "hppoc",
+		"passwd": "password"
+	},
+	"sync": {
+		"type": "local",
+		"platform": "fabric",
+		"blocksSyncTime": "1"
+	},
+	"jwt": {
+		"secret" : "a secret phrase!!",
+		"expiresIn": "2 days"
+	}
+}

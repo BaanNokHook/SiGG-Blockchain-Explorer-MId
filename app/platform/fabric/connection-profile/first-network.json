@@ -1,0 +1,72 @@
+{
+	"name": "first-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminUser": "admin",
+		"adminPassword": "adminpw",
+		"enableAuthentication": false,
+		"organization": "AISMSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mobileid": {
+			"orderers": ["orderer2.mobileid.com"],
+			"peers": {
+				"peer0.ais.mobileid.com": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"AISMSP": {
+			"mspid": "AISMSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/home/sanduser/project/blockchain-explorer-dev/examples/net1/crypto/peerOrganizations/ais.mobileid.com/users/Admin@ais.mobileid.com/msp/keystore/c26aecf487a4affce5e0f6e563d8077e1f291e55b29e810cffa9d57c0d074540_sk"
+			},
+			"signedCert": {
+				"path": "/home/sanduser/project/blockchain-explorer-dev/examples/net1/crypto/peerOrganizations/ais.mobileid.com/users/Admin@ais.mobileid.com/msp/signcerts/Admin@ais.mobileid.com-cert.pem"
+			}
+		}
+	},
+	"orderers": {
+		"orderer2.mobileid.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer-dev/examples/net1/crypto/ordererOrganizations/mobileid.com/orderers/orderer2.mobileid.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.119.209:9050",
+			"eventUrl": "grpcs://172.31.119.209:9050",
+			"grpcOptions": {
+				"ssl-target-name-override": "orderer2.mobileid.com"
+			}
+		}
+	},
+	"peers": {
+		"peer0.ais.mobileid.com": {
+			"tlsCACerts": {
+				"path": "/home/sanduser/project/blockchain-explorer-dev/examples/net1/crypto/peerOrganizations/ais.mobileid.com/peers/peer0.ais.mobileid.com/tls/ca.crt"
+			},
+			"url": "grpcs://172.31.119.209:9051",
+			"eventUrl": "grpcs://172.31.119.209:9053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.ais.mobileid.com"
+			}
+		}
+	}
+}

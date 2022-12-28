@@ -1,0 +1,8 @@
+{
+	"sslEnabled": false,
+	"sslCertsPath": "ssl-certs",
+	"host": "localhost",
+	"_port": "8080",
+	"port": "8081",
+	"license": "Apache-2.0"
+}
